@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.evander</groupId>
+  <artifactId>helloSpring</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+   
+  <!-- Here we can add all libraries (dependecies) to let Maven manage This packeges-->
+  <!-- We can also make this configuration manually using the pom file-->
+  <dependencies>
+	<!-- https://mvnrepository.com/artifact/javax/javaee-web-api  For JAVA EE Native-->
+		<dependency>
+		    <groupId>javax</groupId>
+		    <artifactId>javaee-web-api</artifactId>
+		    <version>8.0</version>
+		    <scope>provided</scope>
+		</dependency>
+  </dependencies>
+  
+  
+  <!-- Plugins are tools that helps to build our projects-->
+  <build>
+    <pluginManagement>
+      <plugins>
+		  <!-- Configuring Your Compiler Plugin-->
+	        <plugin>
+	          <groupId>org.apache.maven.plugins</groupId>
+	          <artifactId>maven-compiler-plugin</artifactId>
+	          <version>3.11.0</version>
+	          <configuration>
+	            <!-- put your configurations here like : -->
+	            <showWarnings>true</showWarnings>
+	          </configuration>
+	        </plugin>
+        <!-- The Tomcat Maven Plugin provides goals to manipulate WAR projects within the Apache Tomcat servlet container.-->
+	        <plugin>
+	          <groupId>org.apache.tomcat.maven</groupId>
+	          <artifactId>tomcat7-maven-plugin</artifactId>
+	          <version>2.2</version>
+	        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+</project>
